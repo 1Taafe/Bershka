@@ -1,5 +1,7 @@
 package test;
 
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import page.BaseClothesPage;
 import page.HomePage;
 import page.ManPage;
@@ -15,7 +17,9 @@ public class BerskaTest {
     @BeforeMethod
 
     public void InitializeDriver(){
-        driver = new ChromeDriver();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+        driver = new FirefoxDriver(options);
     }
 
     @Test
