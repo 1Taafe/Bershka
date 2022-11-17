@@ -18,7 +18,7 @@ public class BerskaTest {
     public void InitializeDriver(){
         System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("headless");
+        options.addArguments("no-sandbox");
         driver = new ChromeDriver(options);
     }
 
