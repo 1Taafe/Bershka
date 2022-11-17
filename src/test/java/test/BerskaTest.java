@@ -1,6 +1,5 @@
 package test;
 
-import org.openqa.selenium.chrome.ChromeOptions;
 import page.BaseClothesPage;
 import page.HomePage;
 import page.ManPage;
@@ -16,10 +15,7 @@ public class BerskaTest {
     @BeforeMethod
 
     public void InitializeDriver(){
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("no-sandbox");
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
     }
 
     @Test
