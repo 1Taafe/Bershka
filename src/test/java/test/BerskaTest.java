@@ -1,7 +1,6 @@
 package test;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import page.BaseClothesPage;
 import page.HomePage;
 import page.ManPage;
@@ -16,7 +15,7 @@ public class BerskaTest {
     WebDriver driver;
     @BeforeMethod
     public void InitializeDriver(){
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
     }
 
     @Test
