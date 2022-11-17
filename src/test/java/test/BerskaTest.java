@@ -15,9 +15,8 @@ import org.testng.annotations.Test;
 public class BerskaTest {
     WebDriver driver;
     @BeforeMethod
-
     public void InitializeDriver(){
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
     }
 
     @Test
