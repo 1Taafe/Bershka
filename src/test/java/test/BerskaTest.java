@@ -1,5 +1,6 @@
 package test;
 
+import org.openqa.selenium.chrome.ChromeOptions;
 import page.BaseClothesPage;
 import page.HomePage;
 import page.ManPage;
@@ -13,8 +14,12 @@ import org.testng.annotations.Test;
 public class BerskaTest {
     WebDriver driver;
     @BeforeMethod
+
     public void InitializeDriver(){
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/google-chrome");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        driver = new ChromeDriver(options);
     }
 
     @Test
