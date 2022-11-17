@@ -29,12 +29,6 @@ public class BerskaTest {
 
     @AfterMethod(alwaysRun = true)
     public void QuitDriver() {
-        try {
-            Thread.sleep(10000);
-        }
-        catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         driver.quit();
         driver = null;
     }
