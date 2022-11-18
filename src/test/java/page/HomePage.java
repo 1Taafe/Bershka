@@ -24,11 +24,18 @@ public class HomePage {
         driver.get(HOMEPAGE_URL);
     }
 
-    public ManPage chooseGender(){
+    public ManPage chooseMaleGender(){
         WebElement gender = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.presenceOfAllElementsLocatedBy(selectGenderLocator)).get(1);
         gender.click();
         return new ManPage(driver);
+    }
+
+    public WomanPage chooseFemaleGender(){
+        WebElement gender = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
+                .until(ExpectedConditions.presenceOfAllElementsLocatedBy(selectGenderLocator)).get(0);
+        gender.click();
+        return new WomanPage(driver);
     }
 
 }

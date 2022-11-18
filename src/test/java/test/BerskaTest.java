@@ -1,11 +1,7 @@
 package test;
 
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import page.BaseClothesPage;
-import page.HomePage;
-import page.ManPage;
+import jdk.jfr.Description;
+import page.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -21,17 +17,32 @@ public class BerskaTest {
     }
 
     @Test
+    @Description("Поиск новых платьев")
+    public void BershkaTest4(){
+        HomePage homePage = new HomePage(driver);
+        homePage.openPage();
+        WomanPage womanPage = homePage.chooseFemaleGender();
+        womanPage.hoverLogo();
+        DressesPage dressesPage = womanPage.openDressesPage();
+        dressesPage.openFilters();
+        dressesPage.chooseNews();
+        dressesPage.applyFilters();
+    }
+
+    @Test
+    @Description("Поиск мужских джинс из базовой коллекции(базового гардероба)")
     public void BershkaTest8(){
         HomePage homePage = new HomePage(driver);
         homePage.openPage();
-        ManPage manPage = homePage.chooseGender();
+        ManPage manPage = homePage.chooseMaleGender();
         manPage.hoverLogo();
         BaseClothesPage baseClothesPage = manPage.openBaseClothes();
-        Assert.assertTrue(baseClothesPage.openJeansPage());
+        baseClothesPage.openJeansPage();
     }
 
     @AfterMethod(alwaysRun = true)
-    public void QuitDriver() {
+    public void QuitDriver() throws Exception {
+        Thread.sleep(5000);
         driver.quit();
         driver = null;
     }
