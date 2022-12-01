@@ -13,7 +13,7 @@ import java.time.Duration;
 public class WomanPage {
     //public static final String HOMEPAGE_URL = "https://www.bershka.com/by";
 
-    static final int WAIT_TIME_IN_SECONDS = 5;
+    static final int WAIT_TIME_IN_SECONDS = 20;
 
     static final By brandLocator = By.className("brand-logo");
 
@@ -38,6 +38,22 @@ public class WomanPage {
         driver.get(href);
         new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS));
         return new DressesPage(driver);
+    }
+
+    public HatsPage openHatsPage(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String href = String.valueOf(js.executeScript("return document.querySelectorAll(\"a[aria-label='Перейти в Головные уборы']\")[0].href"));
+        driver.get(href);
+        new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS));
+        return new HatsPage(driver);
+    }
+
+    public BlazersPage openBlazersPage(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String href = String.valueOf(js.executeScript("return document.querySelectorAll(\"a[aria-label='Перейти в Пиджаки']\")[0].href"));
+        driver.get(href);
+        new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS));
+        return new BlazersPage(driver);
     }
 
 }

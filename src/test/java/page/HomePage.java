@@ -12,7 +12,7 @@ public class HomePage {
 
     public static final String HOMEPAGE_URL = "https://www.bershka.com/by";
     private By selectGenderLocator = By.className("gender-selector__container");
-    static final int WAIT_TIME_IN_SECONDS = 10;
+    static final int WAIT_TIME_IN_SECONDS = 20;
 
     WebDriver driver;
 
