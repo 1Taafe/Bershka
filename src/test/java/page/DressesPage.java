@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class DressesPage {
 
-    final static int WAIT_TIME_IN_SECONDS = 20;
+    final static int WAIT_TIME_IN_SECONDS = 30;
     static final By filtersLocator = By.xpath("//ul[@class='order-grid-header']/li[2]/button");
     static final By newsFilterLocator = By.xpath("//div[@class='filter-item filter-view__item--news']/div/button");
     static final By applyButtonLocator = By.xpath("//button[@data-qa-anchor='seeResultBtn']");

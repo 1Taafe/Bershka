@@ -26,7 +26,7 @@ public class ItemPage {
     static final By additionalItemLocator = By.xpath("//div[@class='swiper-wrapper']/div[4]/div");
 
     static final By sliderNextLocator = By.xpath("//div[@class='product-carousel']/div/button");
-    static final int WAIT_TIME_IN_SECONDS = 20;
+    static final int WAIT_TIME_IN_SECONDS = 30;
     WebDriver driver;
 
     public ItemPage(WebDriver driver){
@@ -51,10 +51,6 @@ public class ItemPage {
     }
 
     public void choose45Size(){
-        try{
-            Thread.sleep(7000);
-        }
-        catch (Exception ex){}
         WebElement size45Button = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(size45Locator));
         size45Button.click();

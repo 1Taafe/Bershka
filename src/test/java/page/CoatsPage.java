@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class CoatsPage {
     WebDriver driver;
-    final static int WAIT_TIME_IN_SECONDS = 20;
+    final static int WAIT_TIME_IN_SECONDS = 30;
     static final By coatItemLocator = By.xpath("//ul[@class='grid-container']/li[12]/div");
     public CoatsPage(WebDriver driver){
         this.driver = driver;

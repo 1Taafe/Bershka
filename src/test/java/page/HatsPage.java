@@ -11,7 +11,7 @@ import java.util.List;
 
 public class HatsPage {
 
-    final static int WAIT_TIME_IN_SECONDS = 20;
+    final static int WAIT_TIME_IN_SECONDS = 30;
     static final By filtersLocator = By.xpath("//ul[@class='order-grid-header']/li[2]/button");
     static final By yellowFilterLocator = By.xpath("//div[@class='filter-list filter-view__item--color']/ul/li[10]/div/div/button");
     static final By blackFilterLocator = By.xpath("//div[@class='filter-list filter-view__item--color']/ul/li[4]/div/div/button");

@@ -12,7 +12,7 @@ import java.time.Duration;
 public class PantsPage {
     WebDriver driver;
 
-    final static int WAIT_TIME_IN_SECONDS = 20;
+    final static int WAIT_TIME_IN_SECONDS = 30;
     static final By pantsItemLocator = By.xpath("//ul[@class='grid-container']/li[5]/div");
     public PantsPage(WebDriver driver){
         this.driver = driver;

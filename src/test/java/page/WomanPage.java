@@ -13,7 +13,7 @@ import java.time.Duration;
 public class WomanPage {
     //public static final String HOMEPAGE_URL = "https://www.bershka.com/by";
 
-    static final int WAIT_TIME_IN_SECONDS = 20;
+    static final int WAIT_TIME_IN_SECONDS = 30;
 
     static final By brandLocator = By.className("brand-logo");
 

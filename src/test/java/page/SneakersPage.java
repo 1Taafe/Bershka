@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SneakersPage {
 
-    final static int WAIT_TIME_IN_SECONDS = 20;
+    final static int WAIT_TIME_IN_SECONDS = 30;
     static final By filtersLocator = By.xpath("//ul[@class='order-grid-header']/li[2]/button");
     static final By applyButtonLocator = By.xpath("//button[@data-qa-anchor='seeResultBtn']");
     static final By whiteFilterLocator = By.xpath("//div[@class='filter-list filter-view__item--color']/ul/li[1]/div/div/button");
@@ -75,10 +75,6 @@ public class SneakersPage {
     }
 
     public ItemPage openItem(){
-        try{
-            Thread.sleep(3000);
-        }
-        catch (Exception ex){}
         WebElement sneakersItem = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(sneakersItemLocator));
         sneakersItem.click();

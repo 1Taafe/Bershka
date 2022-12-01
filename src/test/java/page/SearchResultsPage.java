@@ -12,7 +12,7 @@ import java.time.Duration;
 public class SearchResultsPage {
 
     static final By searchItemLocator = By.xpath("//ul[@class='grid-container']/li[2]/div");
-    static final int WAIT_TIME_IN_SECONDS = 20;
+    static final int WAIT_TIME_IN_SECONDS = 30;
 
     WebDriver driver;
 

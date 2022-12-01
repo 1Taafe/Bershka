@@ -9,7 +9,7 @@ import java.time.Duration;
 public class BaseClothesPage {
 
     private final By jeansLocator = By.xpath("//button[text()='Джинсы']");
-    final static int WAIT_TIME_IN_SECONDS = 20;
+    final static int WAIT_TIME_IN_SECONDS = 30;
     WebDriver driver;
 
     public BaseClothesPage(WebDriver driver){
