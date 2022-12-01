@@ -51,6 +51,11 @@ public class ItemPage {
     }
 
     public void choose45Size(){
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         WebElement size45Button = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(size45Locator));
         size45Button.click();
