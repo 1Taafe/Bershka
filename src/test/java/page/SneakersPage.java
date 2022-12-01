@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class SneakersPage {
 
@@ -21,7 +23,7 @@ public class SneakersPage {
     //
     static final By price120Locataor = By.xpath("//div[@class='filter-list filter-view__item--price']/ul/li[3]/div/div/button");
 
-    static final By sneakersItemLocator = By.xpath("//ul[@class='grid-container']/li[16]/div/a");
+    static final By sneakersItemLocator = By.xpath("//ul[@class='grid-container']/li[4]/div/a");
 
     WebDriver driver;
     public SneakersPage(WebDriver driver){
@@ -73,6 +75,10 @@ public class SneakersPage {
     }
 
     public ItemPage openItem(){
+        try{
+            Thread.sleep(5000);
+        }
+        catch (Exception ex){}
         WebElement sneakersItem = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(sneakersItemLocator));
         sneakersItem.click();

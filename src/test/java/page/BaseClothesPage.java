@@ -20,7 +20,7 @@ public class BaseClothesPage {
         WebElement iframe = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("iFrameResizer0")));
         driver.switchTo().frame(iframe);
-        System.out.println(driver.getPageSource());
+        //System.out.println(driver.getPageSource());
         WebElement jeansButton = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                .until(ExpectedConditions.presenceOfElementLocated(jeansLocator));
         jeansButton.click();
