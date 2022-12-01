@@ -52,7 +52,7 @@ public class ItemPage {
 
     public void choose45Size(){
         try{
-            Thread.sleep(3000);
+            Thread.sleep(7000);
         }
         catch (Exception ex){}
         WebElement size45Button = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
