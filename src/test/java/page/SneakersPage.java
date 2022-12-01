@@ -76,7 +76,7 @@ public class SneakersPage {
 
     public ItemPage openItem(){
         try{
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         }
         catch (Exception ex){}
         WebElement sneakersItem = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
