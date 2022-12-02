@@ -145,7 +145,7 @@ public class BerskaTest {
         sneakersPage.choose45Size();
         sneakersPage.applyFilters();
         ItemPage itemPage = sneakersPage.openItem();
-        //itemPage.choose45Size();
+        itemPage.choose45Size();
         //itemPage.findInStore();
         //itemPage.setRegion("Минск");
         //itemPage.checkAvailability();
