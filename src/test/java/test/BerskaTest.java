@@ -17,6 +17,7 @@ public class BerskaTest {
         driver = new ChromeDriver();
     }
 
+    /*
     @Test(description = "Поиск мужских белых пар кед размером 44-46 ценой до 110 рублей")
     public void BershkaTest1(){
         HomePage homePage = new HomePage(driver);
@@ -130,6 +131,7 @@ public class BerskaTest {
         hatsPage.chooseColors();
         hatsPage.applyFilters();
     }
+    */
 
     @Test(description = "Поиск белых мужских кед размера 45 в магазинах Минска")
     public void BershkaTest10(){
