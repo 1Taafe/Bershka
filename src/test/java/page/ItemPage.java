@@ -56,8 +56,9 @@ public class ItemPage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        WebElement size45Button = (new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS)))
-                .until(ExpectedConditions.elementToBeClickable(size45Locator));
+        /*WebElement size45Button = (new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS)))
+                .until(ExpectedConditions.elementToBeClickable(size45Locator));*/
+        WebElement size45Button = driver.findElement(size45Locator);
         size45Button.click();
     }
 
