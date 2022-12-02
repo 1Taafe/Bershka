@@ -1,30 +1,29 @@
 package page;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
 
 
-public class BaseClothesPage {
+public class BaseClothesPage extends AbstractPage {
 
     private final By jeansLocator = By.xpath("//button[text()='Джинсы']");
-    final static int WAIT_TIME_IN_SECONDS = 30;
-    WebDriver driver;
 
     public BaseClothesPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
+        PageFactory.initElements(this.driver, this);
     }
 
-    public boolean openJeansPage(){
+    public void openJeansPage(){
         WebElement iframe = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.presenceOfElementLocated(By.id("iFrameResizer0")));
         driver.switchTo().frame(iframe);
-        //System.out.println(driver.getPageSource());
         WebElement jeansButton = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                .until(ExpectedConditions.presenceOfElementLocated(jeansLocator));
         jeansButton.click();
-        return true;
+        logger.info("Opened Jeans Page");
     }
 
 }

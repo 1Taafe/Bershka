@@ -3,12 +3,13 @@ package page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ItemPage {
+public class ItemPage extends AbstractPage {
 
     static final By sizeLLocator = By.xpath("//ul[@class='ui--size-dot-list']/li[4]/button");
 
@@ -26,70 +27,89 @@ public class ItemPage {
     static final By additionalItemLocator = By.xpath("//div[@class='swiper-wrapper']/div[4]/div");
 
     static final By sliderNextLocator = By.xpath("//div[@class='product-carousel']/div/button");
-    static final int WAIT_TIME_IN_SECONDS = 30;
-    WebDriver driver;
 
     public ItemPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
+        PageFactory.initElements(this.driver, this);
     }
 
-    public void sliderNext(){
+    public ItemPage sliderNext(){
         WebElement nextButton = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(sliderNextLocator));
         nextButton.click();
+        logger.info("Slider scrolled one time");
+        return this;
     }
-    public void openSizeHelper(){
+    public ItemPage openSizeHelper(){
         WebElement sizeHelper = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(sizeHelpLocator));
         sizeHelper.click();
+        logger.info("SizeHelper opened");
+        return this;
     }
 
-    public void chooseHelpSizes(){
+    public ItemPage chooseHelpSizes(){
         WebElement size36Button = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(sizeHelp36Locator));
         size36Button.click();
+        logger.info("Size 36 selected");
+        return this;
     }
 
-    public void choose45Size(){
+    public ItemPage choose45Size(){
         WebElement size45Button = (new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS)))
                 .until(ExpectedConditions.elementToBeClickable(size45Locator));
         size45Button.click();
+        logger.info("Size 45 selected");
+        return this;
     }
 
-    public void chooseLSize(){
+    public ItemPage chooseLSize(){
         WebElement sizeLButton = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(sizeLLocator));
         sizeLButton.click();
+        logger.info("Size L selected");
+        return this;
     }
 
-    public void chooseSSize(){
+    public ItemPage chooseSSize(){
         WebElement sizeSButton = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(sizeSLocator));
         sizeSButton.click();
+        logger.info("Size S selected");
+        return this;
     }
 
-    public void findInStore(){
+    public ItemPage findInStore(){
         WebElement findButton = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(findInStoreLocator));
         findButton.click();
+        logger.info("FindInStore button pressed");
+        return this;
     }
 
-    public void setRegion(String region){
+    public ItemPage setRegion(String region){
         WebElement regionInput = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(regionInputLocator));
         regionInput.sendKeys(region);
+        logger.info("Region set");
+        return this;
     }
 
-    public void checkAvailability(){
+    public ItemPage checkAvailability(){
         WebElement regionButton = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(regionButtonLocator));
         regionButton.click();
+        logger.info("Availability checked");
+        return this;
     }
 
-    public void openAdditionalItem(){
+    public ItemPage openAdditionalItem(){
         WebElement additionalItem = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(additionalItemLocator));
         additionalItem.click();
+        logger.info("Additional item page opened");
+        return this;
     }
 
 }
