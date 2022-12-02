@@ -51,17 +51,9 @@ public class ItemPage {
     }
 
     public void choose45Size(){
-        try{
-            WebElement size45Button = (new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS)))
-                    .until(ExpectedConditions.elementToBeClickable(size45Locator));
-            size45Button.click();
-        }
-        catch (Exception ex){
-            WebElement size45Button = (new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS)))
-                    .until(ExpectedConditions.elementToBeClickable(size45Locator));
-            size45Button.click();
-        }
-
+        WebElement size45Button = (new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS)))
+                .until(ExpectedConditions.elementToBeClickable(size45Locator));
+        size45Button.click();
     }
 
     public void chooseLSize(){
