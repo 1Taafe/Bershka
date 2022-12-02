@@ -131,7 +131,7 @@ public class BerskaTest {
         hatsPage.applyFilters();
     }
 
-    @Test(description = "Поиск белых мужских кед размера 45 в магазинах Минска")
+    @Test(description = "Поиск белых мужских кед размера 45")
     public void BershkaTest10(){
         HomePage homePage = new HomePage(driver);
         homePage.openPage();
