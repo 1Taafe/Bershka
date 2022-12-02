@@ -105,6 +105,7 @@ public class ItemPage extends AbstractPage {
     }
 
     public ItemPage openAdditionalItem(){
+        CustomDelay(5);
         WebElement additionalItem = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(additionalItemLocator));
         additionalItem.click();

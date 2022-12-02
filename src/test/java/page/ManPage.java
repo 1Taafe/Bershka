@@ -66,6 +66,7 @@ public class ManPage extends AbstractPage {
     }
 
     public ManPage openSearch(){
+        CustomDelay(5);
         WebElement searchButton = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(searchLocator));
         searchButton.click();

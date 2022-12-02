@@ -17,6 +17,7 @@ public class PantsPage extends AbstractPage {
     }
 
     public ItemPage openItem(){
+        CustomDelay(5);
         WebElement pantsItem = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(pantsItemLocator));
         pantsItem.click();

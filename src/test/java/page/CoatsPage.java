@@ -10,13 +10,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class CoatsPage extends AbstractPage {
-    static final By coatItemLocator = By.xpath("//ul[@class='grid-container']/li[12]/div");
+    static final By coatItemLocator = By.xpath("//ul[@class='grid-container']/li[15]/div");
     public CoatsPage(WebDriver driver){
         super(driver);
         PageFactory.initElements(this.driver, this);
     }
 
     public ItemPage openItem(){
+        CustomDelay(5);
         WebElement coatItem = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(coatItemLocator));
         coatItem.click();
