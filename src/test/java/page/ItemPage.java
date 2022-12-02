@@ -12,7 +12,7 @@ public class ItemPage {
 
     static final By sizeLLocator = By.xpath("//ul[@class='ui--size-dot-list']/li[4]/button");
 
-    static final By size45Locator = By.xpath("//ul[@class='ui--size-dot-list']/li[7]/button");
+    static final By size45Locator = By.xpath("//div[@class='size-selector-pdp']/div[2]/ul/li[7]/button");
     static final By sizeSLocator = By.xpath("//ul[@class='ui--size-dot-list']/li[2]/button");
 
     static final By findInStoreLocator = By.xpath("//div[@class='add-cart-group']/button");
