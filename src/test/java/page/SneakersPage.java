@@ -84,11 +84,6 @@ public class SneakersPage {
         WebElement sneakersItem = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(sneakersItemLocator));
         sneakersItem.click();
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         return new ItemPage(driver);
     }
 
