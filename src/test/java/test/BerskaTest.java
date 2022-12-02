@@ -151,7 +151,7 @@ public class BerskaTest {
 
     @AfterMethod(alwaysRun = true)
     public void QuitDriver() throws Exception {
-        Thread.sleep(5000);
+        Thread.sleep(1000);
         driver.quit();
         driver = null;
     }

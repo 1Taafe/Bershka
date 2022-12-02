@@ -15,7 +15,7 @@ public class ItemPage {
     static final By size45Locator = By.xpath("//ul[@class='ui--size-dot-list']/li[7]/button");
     static final By sizeSLocator = By.xpath("//ul[@class='ui--size-dot-list']/li[2]/button");
 
-    static final By findInStoreLocator = By.xpath("//button[@class='button is-black is-long']");
+    static final By findInStoreLocator = By.xpath("//div[@class='add-cart-group']/button");
 
     static final By regionInputLocator = By.id("location-input-address");
 
@@ -51,13 +51,8 @@ public class ItemPage {
     }
 
     public void choose45Size(){
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        WebElement size45Button = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
-                .until(ExpectedConditions.presenceOfElementLocated(size45Locator));
+        WebElement size45Button = (new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS)))
+                .until(ExpectedConditions.elementToBeClickable(size45Locator));
         size45Button.click();
     }
 
