@@ -73,6 +73,7 @@ public class ItemPage extends AbstractPage {
     }
 
     public ItemPage chooseSSize(){
+        CustomDelay(4);
         WebElement sizeSButton = new WebDriverWait(driver, Duration.ofSeconds(WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.elementToBeClickable(sizeSLocator));
         sizeSButton.click();
